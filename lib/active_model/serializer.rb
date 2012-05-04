@@ -491,7 +491,7 @@ module ActiveModel
 
       _attributes.each do |key, value|
         hash[key] = if value.respond_to? :call
-                      @object.instance_eval(&value)
+                      instance_eval(&value)
                     else
                       @object.read_attribute_for_serialization(value)
                     end

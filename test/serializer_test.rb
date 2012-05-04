@@ -496,7 +496,7 @@ class SerializerTest < ActiveModel::TestCase
       root :user
 
       attribute :fullName do
-        "#{@attributes[:first_name]} #{@attributes[:last_name]}"
+        "#{@object.read_attribute_for_serialization(:first_name)} #{@object.read_attribute_for_serialization(:last_name)}"
       end
       attribute :password
     end
